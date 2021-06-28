@@ -24,3 +24,46 @@ main{
   padding-top: 30px;
   padding-bottom: 80px;
 }
+
+.recipes-list{
+  display: grid;
+  grid-template-columns: repeat(3,1fr );
+  gap: 40px;
+  list-style: none;
+  padding: 0;
+}
+.recipes-card a{
+  position: relative;
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  color: #444;
+  font-size: 22px;
+}
+
+.recipes-card img{
+  height: 300px;
+  width: 300px;
+  object-fit:  cover;
+  margin-bottom: 12px;
+  border: 0.5px solid #444;
+  display: block;
+}
+
+.recipes-text{
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  position: absolute;
+  background-color: #ecececa6;
+  border: 0.5px solid #444;
+  width: 300px;
+  height: 50px;
+  top: 40%;
+  left: 0;
+}
+
+.recipes-text:hover{
+  background-color: rgb(245, 234, 76);
+}
+

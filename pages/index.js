@@ -14,7 +14,7 @@ export default function Home({recipes}) {
 
   
   return (
-    <div className={styles.container}>
+    <div>
 
       <Head>
         <title>The Kitchen 🍳</title>
@@ -23,13 +23,25 @@ export default function Home({recipes}) {
       </Head>
 
       <h1>Welcome to The Kitchen 🍳</h1>
-    
+
+      <ul className="recipes-list">
+        {recipes?.length > 0  && recipes.map((recipe) => (
+        <li key={recipe._id} className="recipes-card">
+          <Link href="/">
+            <a>
+              <img src={urlFor(recipe.mainImage).url()} alt="recipe" />
+              <span className="recipes-text">{recipe.name} </span>
+            </a>
+          </Link>
+        </li>
+        ))}
+      </ul>
     </div>
   )
 }
 
 export const getStaticProps = async () => {
   const recipes = await sanityClient.fetch(recipesQuery)
-rd
+
   return { props: { recipes}};e
 }
